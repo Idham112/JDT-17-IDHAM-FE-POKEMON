@@ -2,7 +2,7 @@ import API from "../api";
 import type { PokemonDetails } from "./type";
 
 export const getPokemons = async (page: number): Promise<PokemonDetails[]> => {
-  const limit = 16;
+  const limit = 10;
   const offset = (page - 1) * limit;
   try {
     const response = await API.get(`pokemon/?limit=${limit}&offset=${offset}`);
