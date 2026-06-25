@@ -1,0 +1,38 @@
+import { Outlet, useLocation, useNavigate } from "react-router";
+
+const Layout = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const isDetail = location.pathname.startsWith("/pokemon/");
+
+  return (
+    <div className="h-screen flex justify-center bg-neutral-800">
+      <div className="flex flex-col h-full w-96">
+        <nav className="flex items-center bg-amber-300 w-full h-20 shrink-0 px-4">
+          {isDetail ? (
+            <button
+              onClick={() => navigate(-1)}
+              className="font-['Press_Start_2P'] text-[10px] text-stone-800"
+            >
+              &lt; Back
+            </button>
+          ) : (
+            <span className="font-['Press_Start_2P'] text-[10px] text-stone-800">
+              Pokedex
+            </span>
+          )}
+        </nav>
+        <div className="flex-1 overflow-y-auto">
+          <Outlet />
+        </div>
+        <footer className="flex items-center justify-center bg-amber-300 w-full h-10 shrink-0">
+          <span className="font-['Press_Start_2P'] text-[7px] text-stone-800">
+            &copy; 2026 My Pokedex
+          </span>
+        </footer>
+      </div>
+    </div>
+  );
+};
+
+export default Layout;
