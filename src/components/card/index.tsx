@@ -61,7 +61,7 @@ const Card = ({ pokemon, onRelease }: Props) => {
           }}
           className="mt-2 w-full border border-red-500/30 bg-red-700/60 px-3 py-1.5 font-['Press_Start_2P'] text-[7px] uppercase tracking-wider text-red-200 transition-all duration-200 hover:border-red-400/60 hover:bg-red-600/80 hover:text-white"
         >
-          FREE
+          RELEASE
         </button>
       )}
     </div>
